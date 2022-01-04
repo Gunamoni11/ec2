@@ -8,6 +8,7 @@ resource "aws_instance" "ec2" {
   subnet_id   = "subnet-0017b80df448722c1"
   key_name = "jenkins"
   security_groups = ["sg-0862e0d8235267a61"]
+ user_data = "${file("userdata.sh")}"
   tags = {
     Name = "ec2terraform"
   }
